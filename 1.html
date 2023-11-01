@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script>
+        var seconds = 0;
+        function displayseconds() {
+            seconds += 1;
+            document.getElementById("secondsdisplay").innerText = "This Page Will Be Redirect In " + seconds + " Seconds...";
+        }
+        setInterval(displayseconds, 1000);
+        function redirectpage() {
+            window.location = "start.html";
+        }
+
+        setTimeout('redirectpage()', 600000);
+
+       
+    </script>
+   <link rel="stylesheet" href="hello.css">
+</head>
+
+<body bgcolor="#87CEEB"> <center>
+    <div class="Container" style="background: linear-gradient(135deg,rgb(0,17,255),rgb(161,238,130));">
+        <h1>How To Redirect The Webpage After 10 Minutes... </h1>
+        <h1>Put clothes within 10 minutes... </h1>
+            <hr />
+            <div id="secondsdisplay"></div> 
+            <img src="buffer.gif" height="20"
+                width="20" />
+                <div class="Submit">
+                <form action="index.html">
+                    <input type="submit"
+                             value="START" style="cursor: pointer;"  >
+                    <button onclick="tick() ">START </button>
+                    </form>
+                </div>
+    </center>
+</div>
+</body>
+
+</html>

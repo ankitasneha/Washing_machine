@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.washing-machines {
+        width: 100%;
+        min-height: 100vh;
+        padding: 10px;
+}
+
+.machine1 {
+    position: center;
+    width: 40%;
+    height: 150px;
+    max-width: 90px;
+    /* min-height: 500px; */
+    padding: 30px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    background: #010e1c;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+}
+.machine2 {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    max-width: 90px;
+    /* min-height: 500px; */
+    padding: 30px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    background: #010c18;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+      
+}
+.machine3 {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    max-width: 90px;
+    /* min-height: 500px; */
+    padding: 30px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    background: #010c18;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+      
+}
+.machine4 {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    max-width: 90px;
+    /* min-height: 500px; */
+    padding: 30px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    background: #010c18;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+      
+}
+.machine5 {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    max-width: 90px;
+    /* min-height: 500px; */
+    padding: 30px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    background: #010c18;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+      
+}
+
+.status {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.timer {
+    margin: 10px 0;
+}
+
+
+.book-btn:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #circle-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        #circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 5px solid #3498db;
+            border-radius: 50%;
+            animation: countdown 60s linear forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #timer {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        @keyframes countdown {
+            from {
+                stroke-dashoffset: 0;
+            }
+            to {
+                stroke-dashoffset: 440;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="circle-container">
+        <div id="circle">
+            <div id="timer">60:00</div>
+        </div>
+    </div>
+
+    <script>
+        // Set the countdown time in seconds
+        const countdownTime = 45 * 60; // 45 minutes
+
+        function updateTimerDisplay(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            document.getElementById('timer').textContent = `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+
+        function startCountdown() {
+            let remainingTime = countdownTime;
+            updateTimerDisplay(remainingTime);
+
+            const timerInterval = setInterval(() => {
+                remainingTime--;
+                updateTimerDisplay(remainingTime);
+
+                if (remainingTime <= 0) {
+                    clearInterval(timerInterval);
+                }
+            }, 1000);
+        }
+
+        window.onload = startCountdown;
+    </script>
+</body>
+</html>
