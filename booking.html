@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Styling for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Styling for input fields and buttons */
+        input {
+            display: block;
+            margin: 10px 0;
+        }
+
+        button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button onclick="openPopup()">Open Popup</button> -->
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Enter Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" required>
+            <label for="machineNumber">Machine Number:</label>
+            <input type="text" id="machineNumber" required>
+            <label for="startTime">Start Time:</label>
+            <input type="datetime-local" id="startTime" required>
+            <button onclick="submitForm()">Submit</button>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const rollNumber = document.getElementById('rollNumber').value;
+            const machineNumber = document.getElementById('machineNumber').value;
+            const startTime = document.getElementById('startTime').value;
+
+            // You can process the submitted data here or send it to a server.
+            console.log('Name:', name);
+            console.log('Roll Number:', rollNumber);
+            console.log('Machine Number:', machineNumber);
+            console.log('Start Time:', startTime);
+
+            // Close the popup
+            closePopup();
+        }
+    </script>
+</body>
+</html>

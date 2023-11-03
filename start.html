@@ -5,51 +5,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Washing Machines</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
 
-<body background="image1.jpg" >
+        h1 {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+
+        .washing-machines {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .machine {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            height: 200px; /* Set the height to make it square */
+        }
+
+        .status {
+            background: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .timer {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .book-btn a {
+            text-decoration: none;
+            color: #3498db;
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2973a5;
+        }
+    </style>
+</head>
+<body>
     <h1>Washing Machines</h1>
     <div class="washing-machines">
-        <!-- Machine 1 --> <div class="btns">
-            <button class="btn start-stopwatch">Start</button>
-            <button class="btn lap-stopwatch hidden">Lap</button>
-            <button class="btn reset-stopwatch">Reset</button>
-            <button class="btn back-btn">Back</button>
-          </div>
-        <div class="machine1">
+        <!-- Machine 1 -->
+        <div class="machine">
             <h2>Machine 1</h2>
             <div class="status empty">Empty</div>
             <div class="timer">Time Remaining: N/A</div>
-            <button class="book-btn">Book</button>
-        <div class="machine2">
+            <button class="btn book-btn" onclick="openBookingPopup(1)">Book</button>
+        </div>
+
+        <!-- Machine 2 -->
+        <div class="machine">
             <h2>Machine 2</h2>
             <div class="status empty">Empty</div>
             <div class="timer">Time Remaining: N/A</div>
-            <button class="book-btn">Book</button>
+            <button class="btn book-btn" onclick="openBookingPopup(2)">Book</button>
         </div>
-        <div class="machine3">
+        
+        <!-- Machine 3 -->
+        <div class="machine">
             <h2>Machine 3</h2>
             <div class="status empty">Empty</div>
             <div class="timer">Time Remaining: N/A</div>
-            <button class="book-btn">Book</button>
+            <button class="btn book-btn" onclick="openBookingPopup(3)">Book</button>
         </div>
-        <div  class="machine4">
+
+        <!-- Machine 4 -->
+        <div class="machine">
             <h2>Machine 4</h2>
             <div class="status empty">Empty</div>
             <div class="timer">Time Remaining: N/A</div>
-            <button class="book-btn">Book</button>
+            <button class="btn book-btn" onclick="openBookingPopup(4)">Book</button>
         </div>
-        <div class="machine5">
+
+        <!-- Machine 5 -->
+        <div class="machine">
             <h2>Machine 5</h2>
             <div class="status empty">Empty</div>
             <div class="timer">Time Remaining: N/A</div>
-            <button class="btn">Book</button>
+            <button class="btn book-btn" onclick="openBookingPopup(5)">Book</button>
         </div>
+    </div>
+    <div class="washing-machines">
+        <!-- Machine 1 -->
+        <div class="machine">
+            <h2>Machine 6</h2>
+            <div class="status empty">Empty</div>
+            <div class="timer">Time Remaining: N/A</div>
+            <button class="btn book-btn" onclick="openBookingPopup(1)">Book</button>
         </div>
 
-        <!-- Repeat for Machines 2 to 10 -->
-        <!-- ... -->
+        <!-- Machine 2 -->
+        <div class="machine">
+            <h2>Machine 7</h2>
+            <div class="status empty">Empty</div>
+            <div class="timer">Time Remaining: N/A</div>
+            <button class="btn book-btn" onclick="openBookingPopup(2)">Book</button>
+        </div>
+        
+        <!-- Machine 3 -->
+        <div class="machine">
+            <h2>Machine 8</h2>
+            <div class="status empty">Empty</div>
+            <div class="timer">Time Remaining: N/A</div>
+            <button class="btn book-btn" onclick="openBookingPopup(3)">Book</button>
+        </div>
+
+        <!-- Machine 4 -->
+        <div class="machine">
+            <h2>Machine 9</h2>
+            <div class="status empty">Empty</div>
+            <div class="timer">Time Remaining: N/A</div>
+            <button class="btn book-btn" onclick="openBookingPopup(4)">Book</button>
+        </div>
+
+        <!-- Machine 5 -->
+        <div class="machine">
+            <h2>Machine 10</h2>
+            <div class="status empty">Empty</div>
+            <div class="timer">Time Remaining: N/A</div>
+            <button class="btn book-btn" onclick="openBookingPopup(5)">Book</button>
+        </div>
     </div>
-    <script src="node.js"></script>
+    <!-- Booking Pop-up -->
+    <div class="booking-popup" id="booking-popup">
+        <div class="booking-content">
+            <h2>Book Washing Machine</h2>
+            <input type="text" id="name-input" placeholder="Your Name">
+            <input type="text" id="roll-number-input" placeholder="Your Roll Number">
+            <input type="hidden" id="machine-number">
+            <button class="btn book-confirm-btn" onclick="bookMachine()">Confirm Booking</button>
+            <button class="btn book-cancel-btn" onclick="closeBookingPopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function openBookingPopup(machineNumber) {
+            const popup = document.getElementById("booking-popup");
+            popup.style.display = "block";
+            document.getElementById("machine-number").value = machineNumber;
+        }
+
+        function closeBookingPopup() {
+            const popup = document.getElementById("booking-popup");
+            popup.style.display = "none";
+        }
+
+        function bookMachine() {
+            const name = document.getElementById("name-input").value;
+            const rollNumber = document.getElementById("roll-number-input").value;
+            const machineNumber = document.getElementById("machine-number").value;
+            // Process the booking data
+            alert(`Booking Machine ${machineNumber} for ${name} (Roll Number: ${rollNumber})`);
+            closeBookingPopup();
+        }
+    </script>   
 </body>
 </html>
